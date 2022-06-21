@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+</head>
+<body>
+    <a id="link" href="/1.vcf" download="download">1.vcf</a>
+    <div id="timer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timer = document.getElementById('timer');
+            let timerCount = 4;
+
+            const interval = setInterval(() => {
+                timer.textContent = timerCount = timerCount -1
+
+                if (+timerCount === 0) {
+                    clearInterval(interval)
+
+                    const link = document.getElementById('link');
+                    link.click()
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+</html>
